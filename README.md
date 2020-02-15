@@ -9,7 +9,7 @@ The steps included in this readme will allow you to add Innovelli devices to hom
 
 1.  Go to the OpenZwave 1.4 repo and download the entire openzwave config directory.  Click [here](https://github.com/OpenZWave/open-zwave/tree/1.4/config) for a direct link to the entire folder you need to download.  If you want to download all the files in 1 shot, I recomend using the extension [gitzip](https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn?hl=en) for chrome.
 
-2.  Copy the files into your config folder.  I placed the [linked config folder and files](https://github.com/OpenZWave/open-zwave/tree/1.4/config) into a folder named ozwave residing in the root directdory of your home assistant configuration.  This guide will assume you do the same.  The resulting path will be `/config/ozwave/config/<company name folders & files>`.
+2.  Copy the files into your config folder.  I placed the [linked config folder and files](https://github.com/home-assistant/open-zwave/tree/hass/config) into a folder named ozwave residing in the root directdory of your home assistant configuration.  This guide will assume you do the same.  The resulting path will be `/config/ozwave/config/<company name folders & files>`.
  
 3.  Copy [these files](https://github.com/Petro31/inovelli_zwave_config/tree/master/config/inovelli) into the `/config/ozwave/config/inovelli` directory.
 
@@ -39,14 +39,24 @@ The steps included in this readme will allow you to add Innovelli devices to hom
 		<Product type="0007" id="0001" name="LZW40 Dimmable  Bulb" config="inovelli/lzw40.xml"/>
 	</Manufacturer>
 ```
-    
-# 3. Include your devices to the zwave network.
+   
+# 3. Edit `configuration.yaml` zwave section.
+
+Now we need to point home assistant to the openzwave configuration we just created.
+
+Inside `configuration.yaml` edit your zwave section to contain the `config_path` field with the following path `/config/ozwave/config`
+   
+```
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /config/ozwave/config
+```
+   
+# 4. Include your devices to the zwave network.
 
 You may need to exclude your devices if they are already included.  Once you include the devices back into the system.  You should have access to all zwave configurations.  After you include, heal your network and you'll be good to go.
 
-# 4. Device Specifics
-
-
+# 5. Device Specifics
 
 ## RGB bulbs.
 
