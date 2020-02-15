@@ -3,7 +3,7 @@
 
 _Hassio/Home Assistant Inovelli setup for OpenZwave v1.4_
 
-The steps included in this readme will allow you to add Innovelli devices to home assistant.  This will bring over all zwave configuration options and properly name the devices.
+The steps included in this readme will allow you to add Inovelli devices to home assistant.  This will bring over all zwave configuration options and properly name the devices.
 
 # 1.  Setup Home assistant to use custom zwave configurations.
 
